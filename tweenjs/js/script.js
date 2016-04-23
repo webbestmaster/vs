@@ -7,6 +7,14 @@
 
 	// prepare objects to tween
 
+
+	requestAnimationFrame(animate);
+
+	function animate(time) {
+		requestAnimationFrame(animate);
+		TWEEN.update(time);
+	}
+
 	var i = 0,
 		len = 1e5,
 		objects = [];
@@ -18,16 +26,20 @@
 	function test() {
 
 		for (i = 0; i < len; i += 1) {
-			TweenMax.to(objects[i], 20, {
-				property: 20
-			});
+			new TWEEN.Tween(objects[i])
+				.to({ property: 20 }, 20e3)
+				// .onUpdate(function() {
+				// 	console.log(this.property);
+				// })
+				.start();
+
 		}
 
-		/*
+/*
 		 setInterval(function () {
 		 console.log(objects[len - 1].property);
 		 }, 100);
-		 */
+*/
 
 	}
 
