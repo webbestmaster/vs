@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fixed</title>
+</head>
+<body>
+
+<style>
+	div {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+	}
+</style>
+
+<script type="text/javascript">
+
+	var div,
+			i,
+			len = 1000;
+
+	for (i = 0; i < len; i += 1) {
+		div = document.createElement('div');
+		document.body.appendChild(div);
+	}
+
+</script>
+
+</body>
+</html>
